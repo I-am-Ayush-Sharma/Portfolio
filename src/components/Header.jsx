@@ -1,13 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import './Header.css';
-import logo from "../assets/Logo.png";
-import github from "../assets/Github.png";
-import linkedin from "../assets/Linkedin.png";
-import download from "../assets/download.png";
-import burger from "../assets/Burger.png";
+import "./Header.css";
+import logo from "../assets/Images/Logo.png";
+import github from "../assets/Images/Github.png";
+import linkedin from "../assets/Images/Linkedin.png";
+import download from "../assets/Images/download.png";
+import burger from "../assets/Images/Burger.png";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState("Home");
   const menuRef = useRef(null);
   const burgerRef = useRef(null);
 
@@ -41,7 +42,7 @@ export function Header() {
       <ul
         className={`${
           isMenuOpen ? "flex" : "hidden"
-        } items-center gap-6 text-sm mr-auto flex-col bg-gray-600 absolute px-11 py-2 left-2 top-15 cursor-pointer border-2 hidden-ul `}
+        } items-center gap-6 text-sm mr-auto flex-col bg-[#323232] absolute px-11 py-2 left-2 top-15 border-2 hidden-ul `}
         onClick={() => setIsMenuOpen(false)}
         ref={menuRef}
       >
@@ -52,20 +53,56 @@ export function Header() {
         <li>Contact</li>
       </ul>
       <img src={logo} alt="logo" className="w-10 mr-auto" />
-      <ul className="items-center gap-6 text-sm hidden md:flex mr-auto">
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+      <ul className="items-center gap-5 lg:gap-12 text-sm hidden md:flex mr-auto navbar">
+        <li
+          className={activeNav === "Home" ? "active" : ""}
+          onClick={() => setActiveNav("Home")}
+        >
+          Home
+        </li>
+        <li
+          className={activeNav === "About" ? "active" : ""}
+          onClick={() => setActiveNav("About")}
+        >
+          About
+        </li>
+        <li
+          className={activeNav === "Skills" ? "active" : ""}
+          onClick={() => setActiveNav("Skills")}
+        >
+          Skills
+        </li>
+        <li
+          className={activeNav === "Projects" ? "active" : ""}
+          onClick={() => setActiveNav("Projects")}
+        >
+          Projects
+        </li>
+        <li
+          className={activeNav === "Contact" ? "active" : ""}
+          onClick={() => setActiveNav("Contact")}
+        >
+          Contact
+        </li>
       </ul>
       <div className="flex gap-1 flex-wrap">
-        <a href="#" className="mr-0 sm:mr-5 sm:text-sm rounded-full border px-1 text-xs flex items-center">
+        <a
+          href="#"
+          className="mr-0 sm:mr-5 sm:text-sm rounded-full border px-1 sm:px-4 text-xs flex items-center border-bb"
+        >
           <img src={download} alt="Download" className="w-6 sm:w-7 inline" />
           Resume
         </a>
-        <img src={github} alt="GitHub" className=" rounded-full border p-2" />
-        <img src={linkedin} alt="LinkedIn" className=" rounded-full border p-2"/>
+        <img
+          src={github}
+          alt="GitHub"
+          className=" rounded-full border p-2 border-bb"
+        />
+        <img
+          src={linkedin}
+          alt="LinkedIn"
+          className=" rounded-full border p-2 border-bb"
+        />
       </div>
     </header>
   );

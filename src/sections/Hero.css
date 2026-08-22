@@ -3,3 +3,34 @@
 /* .hero-container {
     background: radial-gradient(circle at 75%, rgb(79, 78, 78) 0.6%, rgb(0, 0, 0) 60%)
 } */
+
+.matter {
+  background: linear-gradient(180deg, #eccd9e, rgba(134, 116, 90, 0.66));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+}
+
+.work {
+  box-shadow: inset 0px 0px 5px 2px #ffe194;
+  transition: all ease 0.6s;
+}
+
+.work:hover {
+  box-shadow: inset 0px 0px 5px 6px #ffeec78b;
+  scale: 105%;
+}
+
+.connect {
+  border-color: transparent;
+  background:
+    linear-gradient(#29292a, #474747) padding-box,
+    linear-gradient(90deg, rgb(122, 88, 0), #ffcc00) border-box;
+  transition: 0.5s all ease;
+}
+.connect:hover {
+  scale: 105%;
+  color: wheat
+}

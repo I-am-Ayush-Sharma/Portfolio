@@ -1,3 +1,55 @@
 .hidden-ul li {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.hidden-ul li:hover {
+  color: #ffea95;
+}
+
+.border-bb {
+  border-color: transparent;
+  background:
+    linear-gradient(#29292a, #474747) padding-box,
+    linear-gradient(90deg, #817055, #e7c899) border-box;
+  box-shadow: 2px -2px 7.4px 1px rgba(255, 244, 227, 0.33);
+  transition: 0.5s all ease;
+}
+
+.border-bb:hover{
+     background:
+    linear-gradient(#464646, #656565) padding-box,
+    linear-gradient(90deg, #817055, #e7c899) border-box;
+  box-shadow: 0px 0px 7.4px 6px rgba(255, 244, 227, 0.33);
+}
+
+.navbar li {
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar li:hover{
+    transition: color 0.5s ease;
+    color: #ffea95;
+}
+
+.navbar li.active {
+    color: #ffea95;
+}
+
+.navbar li::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  top: 1.5rem;
+  left: -2.5px;
+  background-color: #ffea95;
+
+  transition: all 0.3s ease;
+}
+
+.navbar li.active::before {
+  box-shadow: 0px 0px 7.4px 2px rgba(255, 244, 227, 0.33);
+  width: 120%;
 }
