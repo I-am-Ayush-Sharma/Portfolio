@@ -124,8 +124,7 @@ export function Header() {
       </ul>
       <div className="flex gap-1 flex-wrap">
         <a
-          href="../public/Ayush.pdf"
-          download="Ayush-Sharma-Resume.pdf"
+          href="https://drive.google.com/file/d/1dnpGpbLbbq2AEwAj6UfAUFN1lL9aA6N7/view?usp=sharing"
           className="mr-0 sm:mr-5 sm:text-sm rounded-full border px-1 sm:px-4 text-xs flex items-center border-bb"
         >
           <img src={download} alt="Download" className="w-6 sm:w-7 inline" />
