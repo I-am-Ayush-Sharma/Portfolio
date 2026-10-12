@@ -4,3 +4,35 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== Premium Portfolio Scrollbar ===== */
+
+:root {
+  scrollbar-color: #a88b55 #171717;
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+  border-left: 1px solid rgba(212, 175, 100, 0.12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e5c98d 0%, #b99556 50%, #80643a 100%);
+  border: 2px solid #171717;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffe7ad 0%, #d6ad62 100%);
+}
+
+/* Keep horizontal overflow from creating extra scrollbars */
+html,
+body {
+  overflow-x: hidden;
+}
