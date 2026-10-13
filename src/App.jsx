@@ -7,7 +7,7 @@ import JetCursor from "./components/JetCursor";
 
 function App() {
   return (
-    <div className="grand-container overflow-x-hidden">
+    <div className="grand-container overflow-x-clip">
        <JetCursor />
       <Hero />
       <About />
