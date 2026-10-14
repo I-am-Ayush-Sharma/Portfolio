@@ -1,0 +1,246 @@
+
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  background: #151515;
+  color: #fff;
+  font-family: inherit;
+}
+
+.welcome-video,
+.welcome-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-video {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.welcome-overlay {
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 12, 0.25) 0%,
+      rgba(10, 10, 12, 0.12) 30%,
+      rgba(10, 10, 12, 0.48) 65%,
+      rgba(10, 10, 12, 0.82) 100%
+    ),
+    rgba(10, 10, 12, 0.12);
+}
+
+.welcome-content {
+  width: min(92%, 1000px);
+  padding: 32px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-eyebrow {
+  margin: 0 0 22px;
+  color: #e6c88c;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
+
+.welcome-eyebrow span {
+  padding: 0 6px;
+  color: #f5a623;
+}
+
+.welcome-content h1 {
+  margin: 0;
+  font-size: clamp(42px, 6.2vw, 88px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+  text-wrap: balance;
+  text-shadow: 0 3px 28px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-content h1 span {
+  color: #f5b34d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.welcome-description {
+  max-width: 590px;
+  margin: 22px 0 28px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.8;
+  text-wrap: pretty;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.welcome-cta {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 30px;
+  border: 1px solid #f5a623;
+  border-radius: 999px;
+  background: rgba(12, 12, 14, 0.48);
+  color: #ffd18a;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 24px rgba(245, 166, 35, 0.12);
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    box-shadow 250ms ease,
+    transform 250ms ease;
+}
+
+.welcome-cta span {
+  font-size: 19px;
+  letter-spacing: 0;
+}
+
+.welcome-cta:hover:not(:disabled) {
+  background: #f5a623;
+  color: #151515;
+  box-shadow: 0 0 34px rgba(245, 166, 35, 0.3);
+  transform: translateY(-2px);
+}
+
+.welcome-cta:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.welcome-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+.welcome-status {
+  position: absolute;
+  bottom: max(26px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 13px 19px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(10, 10, 12, 0.6);
+  backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #f5a623;
+  box-shadow: 0 0 12px rgba(245, 166, 35, 0.8);
+  animation: status-pulse 1.2s ease-in-out infinite;
+}
+
+.status-dot.ready {
+  background: #65d6a0;
+  box-shadow: 0 0 12px rgba(101, 214, 160, 0.65);
+  animation: none;
+}
+
+.status-indicator {
+  color: #65d6a0;
+  white-space: nowrap;
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-content {
+    width: 90%;
+    padding-bottom: 42px;
+  }
+
+  .welcome-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+
+  .welcome-content h1 {
+    font-size: clamp(38px, 10vw, 56px);
+  }
+
+  .welcome-description {
+    max-width: 360px;
+    margin: 18px 0 24px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .welcome-cta {
+    min-height: 50px;
+    padding: 0 24px;
+    font-size: 10px;
+  }
+
+  .welcome-status {
+    bottom: max(18px, env(safe-area-inset-bottom));
+    gap: 8px;
+    padding: 11px 13px;
+    font-size: 8px;
+    letter-spacing: 0.07em;
+  }
+}
+
+@media (max-height: 600px) and (min-width: 601px) {
+  .welcome-content {
+    transform: scale(0.78);
+  }
+
+  .welcome-status {
+    bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+
+  .welcome-cta {
+    transition: none;
+  }
+}

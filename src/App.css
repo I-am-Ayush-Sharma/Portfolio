@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.portfolio-content {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.portfolio-content.portfolio-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
