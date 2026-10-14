@@ -62,10 +62,10 @@ portfolio/
 
 ```bash
 # Clone the repository
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone [YOUR_GITHUB_REPOSITORY_URL](https://github.com/I-am-Ayush-Sharma/Portfolio)
 
 # Navigate into the project
-cd YOUR_PROJECT_FOLDER
+cd Portfolio
 
 # Install dependencies
 npm install
